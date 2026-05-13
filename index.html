@@ -37,24 +37,26 @@ nav.scrolled{background:rgba(255,248,245,0.95);backdrop-filter:blur(16px);paddin
 @keyframes loadBar{from{width:0}to{width:100%}}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 60px 60px;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 70% 50%,#fce4ec 0%,#fff8f5 60%,#f9e3eb 100%);}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:120px 60px 60px;gap:40px;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 30% 50%,#fce4ec 0%,#fff8f5 60%,#f9e3eb 100%);}
 .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:0.4;animation:blobFloat 8s ease-in-out infinite;}
-.blob-1{width:500px;height:500px;background:#f9b8cc;top:-100px;left:60%;animation-delay:0s;}
-.blob-2{width:300px;height:300px;background:#fcd4e4;bottom:0;left:30%;animation-delay:2s;}
-.blob-3{width:200px;height:200px;background:#f48fb1;top:40%;left:10%;animation-delay:4s;}
+.blob-1{width:500px;height:500px;background:#f9b8cc;top:-100px;right:0;animation-delay:0s;}
+.blob-2{width:300px;height:300px;background:#fcd4e4;bottom:0;right:20%;animation-delay:2s;}
+.blob-3{width:200px;height:200px;background:#f48fb1;top:40%;left:5%;animation-delay:4s;}
 @keyframes blobFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-30px) scale(1.05);}}
 .petal{position:absolute;width:12px;height:20px;background:rgba(242,167,187,0.5);border-radius:50% 0 50% 0;animation:petalFall linear infinite;}
 @keyframes petalFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(360deg);opacity:0;}}
+/* Content: right side (RTL = first in DOM = right) */
 .hero-content{position:relative;z-index:2;max-width:560px;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);border:1px solid rgba(232,102,138,0.2);padding:8px 20px;border-radius:50px;font-size:13px;color:var(--rose);font-weight:500;margin-bottom:28px;animation:fadeUp 0.8s ease both;}
 .hero-badge::before{content:'✦';font-size:10px;}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(52px,7vw,90px);line-height:1.05;color:var(--text);margin-bottom:16px;animation:fadeUp 0.8s 0.15s ease both;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(44px,5.5vw,80px);line-height:1.05;color:var(--text);margin-bottom:16px;animation:fadeUp 0.8s 0.15s ease both;}
 .hero-title em{font-style:italic;color:var(--rose);display:block;}
 .hero-arabic{font-size:22px;font-weight:300;color:var(--light-text);margin-bottom:32px;animation:fadeUp 0.8s 0.3s ease both;}
 .hero-desc{font-size:16px;line-height:1.8;color:var(--light-text);margin-bottom:44px;max-width:440px;animation:fadeUp 0.8s 0.45s ease both;}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp 0.8s 0.6s ease both;}
-.hero-visual{position:absolute;left:60px;top:50%;transform:translateY(-50%);width:42%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px;animation:fadeIn 1.2s 0.3s ease both;pointer-events:none;}
+/* Visual: left side (LTR visual order = second in DOM = left in RTL) */
+.hero-visual{position:relative;width:100%;height:500px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px;animation:fadeIn 1.2s 0.3s ease both;pointer-events:none;order:2;}
 .hero-img-card{border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(201,64,112,0.15);}
 .hero-img-card:nth-child(1){grid-row:span 2;animation:floatY 6s ease-in-out infinite;}
 .hero-img-card:nth-child(2){animation:floatY 6s 1s ease-in-out infinite;}
@@ -127,10 +129,10 @@ section{padding:100px 60px;}
 .product-cat{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:6px;}
 .product-name{font-family:'Playfair Display',serif;font-size:20px;color:var(--text);margin-bottom:8px;}
 .product-arabic{font-size:14px;color:var(--light-text);margin-bottom:16px;}
-.product-footer{display:flex;align-items:center;justify-content:space-between;}
+.product-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
 .product-dots{display:flex;gap:6px;}
 .dot{width:14px;height:14px;border-radius:50%;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.12);}
-.product-arrow{width:36px;height:36px;background:var(--blush);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:16px;transition:all 0.3s;}
+.product-arrow{width:36px;height:36px;background:var(--blush);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:14px;transition:all 0.3s;flex-shrink:0;line-height:1;}
 .product-card:hover .product-arrow{background:var(--rose);color:white;}
 
 /* FEATURES */
@@ -155,10 +157,10 @@ section{padding:100px 60px;}
 .feature-text p{font-size:14px;color:var(--light-text);line-height:1.7;}
 
 /* OFFERS */
-.offers-section{background:white;}
-.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.offer-card{padding:44px 32px;border-radius:28px;text-align:center;opacity:0;transform:translateY(30px);transition:all 0.5s ease;position:relative;overflow:hidden;}
-.offer-card.visible{opacity:1;transform:translateY(0);}
+.offers-section{background:var(--cream);}
+.offers-carousel-track{display:flex;gap:28px;transition:transform 0.5s cubic-bezier(0.23,1,0.32,1);will-change:transform;}
+.offers-carousel-track .offer-card{flex:0 0 calc(33.333% - 19px);min-width:0;}
+.offer-card{padding:44px 32px;border-radius:28px;text-align:center;position:relative;overflow:hidden;transition:transform 0.4s ease;cursor:none;}
 .offer-card:hover{transform:translateY(-10px);}
 .offer-affiliate{background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;}
 .offer-free-delivery{background:linear-gradient(135deg,var(--deep),#8b1a40);color:white;}
@@ -249,15 +251,22 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
 /* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:16px 24px;}nav.scrolled{padding:12px 24px;}.nav-links{display:none;}
-  section{padding:64px 24px;}.hero{padding:100px 24px 60px;flex-direction:column;}.hero-content{max-width:100%;}.hero-visual{display:none;}
+  section{padding:64px 24px;}
+  .hero{grid-template-columns:1fr;padding:100px 24px 60px;gap:32px;}
+  .hero-visual{order:1;height:320px;width:100%;}
+  .hero-content{order:2;}
   .stats-bar{padding:24px;flex-wrap:wrap;gap:20px;}.features-grid{grid-template-columns:1fr;}.testimonials-grid{grid-template-columns:1fr;}
-  .offers-grid{grid-template-columns:1fr;}.payment-layout{grid-template-columns:1fr;gap:40px;}.routine-steps{flex-direction:column;}.rst-arrow{transform:rotate(90deg);}
+  .payment-layout{grid-template-columns:1fr;gap:40px;}.routine-steps{flex-direction:column;}.rst-arrow{transform:rotate(90deg);}
   .carousel-track .product-card{flex:0 0 calc(100% - 0px);}
+  .offers-carousel-track .offer-card{flex:0 0 calc(100% - 0px);}
   .cat-tabs-wrap{gap:4px;padding:4px;}.cat-tab{padding:10px 14px;font-size:12px;}
   footer{grid-template-columns:1fr 1fr;gap:32px;padding:40px 24px;}
   .footer-bottom{padding:16px 24px;flex-direction:column;gap:8px;text-align:center;}
 }
-@media(min-width:901px) and (max-width:1200px){.carousel-track .product-card{flex:0 0 calc(50% - 12px);}}
+@media(min-width:901px) and (max-width:1200px){
+  .carousel-track .product-card{flex:0 0 calc(50% - 12px);}
+  .offers-carousel-track .offer-card{flex:0 0 calc(50% - 14px);}
+}
 </style>
 </head>
 <body>
@@ -285,12 +294,8 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
   <div class="hero-bg"></div>
   <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
   <div id="petals-container"></div>
-  <div class="hero-visual">
-    <div class="hero-img-card" style="height:100%;"><img src="photo_4_2026-05-13_12-18-40.jpg" alt="ANTE Logo" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"></div>
-    <div class="hero-img-card" style="height:160px;"><img src="photo_1_2026-05-13_12-18-40.jpg" alt="Tint Balm" onerror="this.parentElement.style.background='linear-gradient(135deg,#f9b8cc,#e8668a)'"></div>
-    <div class="hero-img-card" style="height:160px;"><img src="photo_2_2026-05-13_12-18-40.jpg" alt="Makeup Remover" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffe4cc,#f4a200)'"></div>
-  </div>
-  <div class="hero-content" style="margin-right:auto;">
+  <!-- Content: RIGHT side in RTL (order:1 default) -->
+  <div class="hero-content">
     <div class="hero-badge">Syrian Natural Cosmetics — صُنع في سوريا</div>
     <h1 class="hero-title">Beauty That<em>Begins</em>with Nature</h1>
     <p class="hero-arabic">الجمال الطبيعي يبدأ من هنا</p>
@@ -299,6 +304,12 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
       <a href="#products" class="btn-primary">اكتشفي المنتجات ✦</a>
       <a href="about.html" class="btn-outline">قصتنا ←</a>
     </div>
+  </div>
+  <!-- Visual: LEFT side in RTL (order:2) -->
+  <div class="hero-visual">
+    <div class="hero-img-card" style="height:100%;"><img src="photo_4_2026-05-13_12-18-40.jpg" alt="ANTE Logo" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"></div>
+    <div class="hero-img-card" style="height:160px;"><img src="photo_1_2026-05-13_12-18-40.jpg" alt="Tint Balm" onerror="this.parentElement.style.background='linear-gradient(135deg,#f9b8cc,#e8668a)'"></div>
+    <div class="hero-img-card" style="height:160px;"><img src="photo_2_2026-05-13_12-18-40.jpg" alt="Makeup Remover" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffe4cc,#f4a200)'"></div>
   </div>
 </section>
 
@@ -330,6 +341,48 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
     <span class="marquee-item">Body Mist <span class="star">✦</span></span><span class="marquee-item">عطر الجسم <span class="star">✦</span></span>
   </div>
 </div>
+
+<!-- OFFERS -->
+<section class="offers-section" id="offers">
+  <div style="text-align:center;margin-bottom:52px;">
+    <div class="section-tag" style="justify-content:center;">عروضنا</div>
+    <h2 class="section-title" style="text-align:center;">وفّري <em>أكثر</em></h2>
+    <p class="section-sub" style="margin:0 auto;text-align:center;">عروض حصرية لزبوناتنا الكريمات</p>
+  </div>
+  <div class="carousel-viewport">
+    <div class="offers-carousel-track" id="offers-track">
+      <div class="offer-card offer-affiliate">
+        <span class="offer-icon">🤝</span>
+        <div class="offer-tag">Affiliate Program</div>
+        <h3>برنامج الشراكة</h3>
+        <p>شاركي ANTE مع صديقاتك واحصلي على</p>
+        <span class="offer-highlight">خصم 20%</span>
+        <p class="offer-sub">على كل طلب يتم عبر رابطك الخاص</p>
+      </div>
+      <div class="offer-card offer-free-delivery">
+        <span class="offer-icon">🚚</span>
+        <div class="offer-tag">Free Delivery</div>
+        <h3>توصيل مجاني</h3>
+        <p>اطلبي</p>
+        <span class="offer-highlight">4 قطع فأكثر</span>
+        <p class="offer-sub">وتوصلك الطلبية على حسابنا مجاناً</p>
+      </div>
+      <div class="offer-card offer-buy2">
+        <span class="offer-icon">🎁</span>
+        <div class="offer-tag">Buy 2 Get 1</div>
+        <h3>اشتري 2 وخذي 3</h3>
+        <p>اشتري أي</p>
+        <span class="offer-highlight">قطعتين</span>
+        <p class="offer-sub">واحصلي على القطعة الثالثة مجاناً</p>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-nav">
+    <button class="carousel-btn" id="prev-offers">❯</button>
+    <div class="carousel-dots" id="dots-offers"></div>
+    <button class="carousel-btn" id="next-offers">❮</button>
+  </div>
+</section>
 
 <!-- PRODUCTS -->
 <section class="products-section" id="products">
@@ -365,7 +418,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">مرطب عميق — زبدة شيا 100% طبيعية</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fff3e0"></div><div class="dot" style="background:#f4d89a"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -381,7 +434,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">ترطيب + توهج ذهبي للبشرة</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#c47a2a"></div><div class="dot" style="background:#8b4513"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -397,7 +450,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">ترطيب منعش مع رائحة الحمضيات</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fff176"></div><div class="dot" style="background:#f9a825"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -413,7 +466,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">لون طبيعي للشفاه والخدود</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#880e4f"></div><div class="dot" style="background:#e91e8c"></div><div class="dot" style="background:#5d2010"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -429,7 +482,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يزيل المكياج بلطف دون جفاف</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fce4ec"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -445,7 +498,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يثبت الحواجب ويمنحها شكلاً طبيعياً</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#3d1f2e"></div><div class="dot" style="background:#5d4037"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -461,7 +514,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">تقشير طبيعي — ناعم وفعّال</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#87ceeb"></div><div class="dot" style="background:#fff"></div><div class="dot" style="background:#f4a200"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -477,7 +530,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">أملاح بحرية طبيعية — 3 ألوان</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#7ecfcf"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -493,7 +546,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">عطر خفيف ومنعش — Fine Fragrance</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9f9f9"></div><div class="dot" style="background:#c0392b"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -509,7 +562,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">زيت طبيعي مغذٍّ للبشرة — 100ml</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#9c27b0"></div><div class="dot" style="background:#daa520"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -525,7 +578,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">ترطيب عميق — 50ml</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#c0392b"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -541,7 +594,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يقلل الهالات والانتفاخ</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#c0392b"></div><div class="dot" style="background:#fce4ec"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -557,7 +610,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">تبييض طبيعي وتوحيد اللون</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#5d4037"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -573,7 +626,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يوحد لون البشرة ويشرّقها</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fff"></div><div class="dot" style="background:#e8668a"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -589,7 +642,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">عناية مكثفة بالمكونات المخمرة</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fce4ec"></div><div class="dot" style="background:#f9b8cc"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -605,7 +658,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">شد وتجديد البشرة بشكل طبيعي</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#d4a060"></div><div class="dot" style="background:#8b6914"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -621,7 +674,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">رطوبة وتعطير خفيف للشعر</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9aab8"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -637,7 +690,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يغذي ويصلح أطراف الشعر — 150ml</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#e8668a"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -653,7 +706,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">زيت مغذٍّ خاص للشعر الفاتح</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#ffe082"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -669,7 +722,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">زيت مغذٍّ خاص للشعر الغامق</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#5d4037"></div><div class="dot" style="background:#3d1f2e"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -685,7 +738,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">تبرنزي بلون غامق ذهبي</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#8b4513"></div><div class="dot" style="background:#c06020"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -701,7 +754,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">تبرنزي بلون فاتح محمر</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#e53935"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -728,7 +781,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">مرطب عميق — زبدة شيا 100% طبيعية</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fff3e0"></div><div class="dot" style="background:#f4d89a"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -744,7 +797,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">ترطيب + توهج ذهبي للبشرة</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#c47a2a"></div><div class="dot" style="background:#8b4513"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -760,7 +813,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">ترطيب منعش مع رائحة الحمضيات</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fff176"></div><div class="dot" style="background:#f9a825"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -787,7 +840,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">تقشير طبيعي — ناعم وفعّال</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#87ceeb"></div><div class="dot" style="background:#fff"></div><div class="dot" style="background:#f4a200"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -803,7 +856,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">أملاح بحرية طبيعية — 3 ألوان</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#7ecfcf"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -819,7 +872,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">عطر خفيف ومنعش — Fine Fragrance</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9f9f9"></div><div class="dot" style="background:#c0392b"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -835,7 +888,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">زيت طبيعي مغذٍّ للبشرة — 100ml</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#9c27b0"></div><div class="dot" style="background:#daa520"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -862,7 +915,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">ترطيب عميق — 50ml</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#c0392b"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -878,7 +931,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يقلل الهالات والانتفاخ</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#c0392b"></div><div class="dot" style="background:#fce4ec"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -894,7 +947,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">تبييض طبيعي وتوحيد اللون</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#5d4037"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -910,7 +963,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يوحد لون البشرة ويشرّقها</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fff"></div><div class="dot" style="background:#e8668a"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -926,7 +979,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">عناية مكثفة بالمكونات المخمرة</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fce4ec"></div><div class="dot" style="background:#f9b8cc"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -942,7 +995,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">شد وتجديد البشرة بشكل طبيعي</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#d4a060"></div><div class="dot" style="background:#8b6914"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -969,7 +1022,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">رطوبة وتعطير خفيف للشعر</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9aab8"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -985,7 +1038,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يغذي ويصلح أطراف الشعر — 150ml</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#e8668a"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -1001,7 +1054,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">زيت مغذٍّ خاص للشعر الفاتح</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#ffe082"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -1017,7 +1070,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">زيت مغذٍّ خاص للشعر الغامق</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#5d4037"></div><div class="dot" style="background:#3d1f2e"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -1044,7 +1097,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">لون طبيعي للشفاه والخدود</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#880e4f"></div><div class="dot" style="background:#e91e8c"></div><div class="dot" style="background:#5d2010"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -1060,7 +1113,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يزيل المكياج بلطف دون جفاف</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#fce4ec"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -1076,7 +1129,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">يثبت الحواجب ويمنحها شكلاً طبيعياً</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#3d1f2e"></div><div class="dot" style="background:#5d4037"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -1103,7 +1156,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">تبرنزي بلون غامق ذهبي</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#8b4513"></div><div class="dot" style="background:#c06020"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -1119,7 +1172,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
               <div class="product-arabic">تبرنزي بلون فاتح محمر</div>
               <div class="product-footer">
                 <div class="product-dots"><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#e53935"></div></div>
-                <div class="product-arrow">→</div>
+                <div class="product-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
               </div>
             </div>
           </div>
@@ -1152,20 +1205,6 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
       <div class="feature-item"><div class="feature-icon">💝</div><div class="feature-text"><h4>يدوي الصنع بمحبة</h4><p>نصنع كل منتج بعناية وتفان حتى تشعري بالفرق من أول استخدام</p></div></div>
       <div class="feature-item"><div class="feature-icon">🚀</div><div class="feature-text"><h4>توصيل سريع لبابك</h4><p>نوصل منتجاتك أينما كنت بأمان وسرعة مع ضمان جودة التغليف</p></div></div>
     </div>
-  </div>
-</section>
-
-<!-- OFFERS -->
-<section class="offers-section" id="offers">
-  <div style="text-align:center;margin-bottom:52px;">
-    <div class="section-tag" style="justify-content:center;">عروضنا</div>
-    <h2 class="section-title" style="text-align:center;">وفّري <em>أكثر</em></h2>
-    <p class="section-sub" style="margin:0 auto;text-align:center;">عروض حصرية لزبوناتنا الكريمات</p>
-  </div>
-  <div class="offers-grid">
-    <div class="offer-card offer-affiliate"><span class="offer-icon">🤝</span><div class="offer-tag">Affiliate Program</div><h3>برنامج الشراكة</h3><p>شاركي ANTE مع صديقاتك واحصلي على</p><span class="offer-highlight">خصم 20%</span><p class="offer-sub">على كل طلب يتم عبر رابطك الخاص</p></div>
-    <div class="offer-card offer-free-delivery"><span class="offer-icon">🚚</span><div class="offer-tag">Free Delivery</div><h3>توصيل مجاني</h3><p>اطلبي</p><span class="offer-highlight">4 قطع فأكثر</span><p class="offer-sub">وتوصلك الطلبية على حسابنا مجاناً</p></div>
-    <div class="offer-card offer-buy2"><span class="offer-icon">🎁</span><div class="offer-tag">Buy 2 Get 1</div><h3>اشتري 2 وخذي 3</h3><p>اشتري أي</p><span class="offer-highlight">قطعتين</span><p class="offer-sub">واحصلي على القطعة الثالثة مجاناً</p></div>
   </div>
 </section>
 
@@ -1252,7 +1291,6 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
       <a href="https://wa.me/message/NECEQUQ3ECCDO1" target="_blank" class="social-link" title="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
   </div>
-  <div class="footer-col"><h5>المنتجات</h5><ul><li><a href="#products">أملاح الجسم</a></li><li><a href="#products">زيت الشعر</a></li><li><a href="#products">سيروم</a></li><li><a href="#products">زبدة الجسم</a></li><li><a href="#products">عطور</a></li></ul></div>
   <div class="footer-col"><h5>عن ANTE</h5><ul><li><a href="about.html">قصتنا</a></li><li><a href="about.html#values">قيمنا</a></li><li><a href="blog.html">المدونة</a></li><li><a href="#routine">روتينك الخاص</a></li></ul></div>
   <div class="footer-col"><h5>الدفع والتوصيل</h5><ul><li><a href="#payment">طريقة الدفع</a></li><li><a href="#payment">Sham Cash</a></li><li><a href="#offers">توصيل مجاني</a></li><li><a href="#offers">برنامج الشراكة</a></li></ul></div>
 </footer>
@@ -1296,6 +1334,29 @@ function initCarousel(id){
   go(0);
 }
 ['all','butter','body','skin','hair','makeup','tanning'].forEach(initCarousel);
+// Offers carousel
+initCarousel('offers', 'prev-offers', 'next-offers', 'dots-offers', window.innerWidth < 700 ? 1 : 3);
+function initOffersCarousel(){
+  const track=document.getElementById('offers-track');
+  const prev=document.getElementById('prev-offers');
+  const next=document.getElementById('next-offers');
+  const dots=document.getElementById('dots-offers');
+  if(!track||!prev||!next||!dots)return;
+  const cards=Array.from(track.children);
+  const VIS=window.innerWidth<700?1:3;
+  const pages=Math.max(1,cards.length-VIS+1);
+  let cur=0;
+  dots.innerHTML='';
+  for(let i=0;i<pages;i++){const d=document.createElement('div');d.className='carousel-dot'+(i===0?' active':'');d.onclick=()=>go(i);dots.appendChild(d);}
+  function w(){if(!cards[0])return 0;return cards[0].offsetWidth+(parseFloat(getComputedStyle(track).gap)||28);}
+  function go(i){cur=Math.max(0,Math.min(i,pages-1));track.style.transform=`translateX(${cur*w()}px)`;dots.querySelectorAll('.carousel-dot').forEach((d,j)=>d.classList.toggle('active',j===cur));prev.disabled=cur===0;next.disabled=cur>=pages-1;}
+  prev.onclick=()=>go(cur+1);next.onclick=()=>go(cur-1);
+  let sx=0;track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)go(d<0?cur+1:cur-1);});
+  go(0);
+}
+initOffersCarousel();
+window.addEventListener('resize',initOffersCarousel);
 document.querySelectorAll('.cat-tab').forEach(tab=>{tab.onclick=()=>{document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.carousel-panel').forEach(p=>p.classList.remove('active'));tab.classList.add('active');document.getElementById('panel-'+tab.dataset.panel)?.classList.add('active');initCarousel(tab.dataset.panel);};});
 // Parallax
 document.querySelector('.hero').addEventListener('mousemove',e=>{const r=e.currentTarget.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/r.width,y=(e.clientY-r.top-r.height/2)/r.height;document.querySelectorAll('.blob').forEach((b,i)=>b.style.transform=`translate(${x*(i+1)*12}px,${y*(i+1)*12}px)`);});
