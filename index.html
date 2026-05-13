@@ -233,7 +233,7 @@ section{padding:100px 60px;}
 .btn-white:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.3);}
 
 /* FOOTER */
-footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;}
 .footer-brand .logo{font-family:'Playfair Display',serif;font-size:28px;color:white;display:block;margin-bottom:16px;text-decoration:none;}
 .footer-brand p{font-size:14px;line-height:1.8;margin-bottom:24px;}
 .social-links{display:flex;gap:12px;}
@@ -340,80 +340,796 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
   </div>
   <div class="cat-tabs-wrap" id="catTabs">
     <button class="cat-tab active" data-panel="all">🌿 الكل</button>
+    <button class="cat-tab" data-panel="butter">🧈 زبدة</button>
     <button class="cat-tab" data-panel="body">💆 الجسم</button>
+    <button class="cat-tab" data-panel="skin">✨ البشرة</button>
     <button class="cat-tab" data-panel="hair">💇 الشعر</button>
-    <button class="cat-tab" data-panel="serum">✨ سيروم</button>
-    <button class="cat-tab" data-panel="fragrance">🌸 عطور</button>
     <button class="cat-tab" data-panel="makeup">💄 ميكاب</button>
+    <button class="cat-tab" data-panel="tanning">☀️ تانينج</button>
   </div>
   <div class="carousel-section">
-
+    
     <!-- ALL -->
-    <div class="carousel-panel active" id="panel-all">
+    <div class="carousel-panel  active" id="panel-all">
       <div class="carousel-viewport"><div class="carousel-track" id="track-all">
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-11-15.jpg" alt="Body Salts" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">BESTSELLER</div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Body Salts</div><div class="product-arabic">أملاح الجسم الطبيعية</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#7ecfcf"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-20.jpg" alt="Baby Hair Oil" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#e8668a)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">NEW</div></div><div class="product-info"><div class="product-cat">Hair Care</div><div class="product-name">Baby Hair Oil</div><div class="product-arabic">زيوت مغذية للشعر</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9aab8"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-22.jpg" alt="Tanning Oil" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffe0b2,#f4a200)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Tanning Oil</div><div class="product-arabic">زيت التانينج — تبرنزي بيوم</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#c06020"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-23.jpg" alt="Body Butter" onerror="this.parentElement.style.background='linear-gradient(135deg,#fff3e0,#fce4ec)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">ORGANIC</div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Body Butter</div><div class="product-arabic">زبدة الجسم — ترطيب 24 ساعة</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#fff3e0;border:1.5px solid #ddd"></div><div class="dot" style="background:#8b4513"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-29.jpg" alt="Body Mist" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f48fb1)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Fragrance</div><div class="product-name">Body Mist</div><div class="product-arabic">عطر للجسم — Fine Fragrance</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9f9f9;border:1.5px solid #ddd"></div><div class="dot" style="background:#c0392b"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-30.jpg" alt="Hyaluronic" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8668a,#c0392b)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">BEST SKIN</div></div><div class="product-info"><div class="product-cat">Serum</div><div class="product-name">Hyaluronic Acid Serum</div><div class="product-arabic">سيروم هيالورونيك — 50ml</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#c0392b"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-33.jpg" alt="Whitening Serum" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#c0392b)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Serum</div><div class="product-name">Whitening Serum</div><div class="product-arabic">سيروم التبييض — عرق السوس</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#5d4037"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-35.jpg" alt="Tint Balm" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#880e4f)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">MAKEUP</div></div><div class="product-info"><div class="product-cat">Makeup</div><div class="product-name">Tint Balm</div><div class="product-arabic">تينت بالم — 15g</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#880e4f"></div><div class="dot" style="background:#e91e8c"></div><div class="dot" style="background:#5d2010"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-38.jpg" alt="Scrub" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#e8668a)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Body Scrub</div><div class="product-arabic">سكراب الجسم — 100g</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#87ceeb"></div><div class="dot" style="background:#fff;border:1.5px solid #ddd"></div><div class="dot" style="background:#f4a200"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-18-13.jpg" alt="Solid Perfume" onerror="this.parentElement.style.background='linear-gradient(135deg,#f5f5f5,#eee)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">10 SCENTS</div></div><div class="product-info"><div class="product-cat">Fragrance</div><div class="product-name">Solid Perfume</div><div class="product-arabic">عطر صلب — 10 روائح</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#2196f3"></div><div class="dot" style="background:#9c27b0"></div><div class="dot" style="background:#4caf50"></div><div class="dot" style="background:#ff9800"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-24.jpg" alt="Body Oil" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Body Oil</div><div class="product-arabic">زيت الجسم — 100ml</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#9c27b0"></div><div class="dot" style="background:#daa520"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-35.jpg" alt="Serum Hair Ends" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Hair Care</div><div class="product-name">Serum for Hair Ends</div><div class="product-arabic">سيروم لأطراف الشعر — 150ml</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#e8668a"></div></div><div class="product-arrow">→</div></div></div></div>
+        
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_1_2026-05-13_12-03-21.jpg" alt="زبدة الشيا الخام" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">BESTSELLER</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Butter</div>
+              <div class="product-name">زبدة الشيا الخام</div>
+              <div class="product-arabic">مرطب عميق — زبدة شيا 100% طبيعية</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fff3e0"></div><div class="dot" style="background:#f4d89a"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_2_2026-05-13_12-03-21.jpg" alt="زبدة البرونز" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Butter</div>
+              <div class="product-name">زبدة البرونز</div>
+              <div class="product-arabic">ترطيب + توهج ذهبي للبشرة</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#c47a2a"></div><div class="dot" style="background:#8b4513"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_3_2026-05-13_12-03-21.jpg" alt="زبدة الليمون" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Butter</div>
+              <div class="product-name">زبدة الليمون</div>
+              <div class="product-arabic">ترطيب منعش مع رائحة الحمضيات</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fff176"></div><div class="dot" style="background:#f9a825"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_5_2026-05-13_12-03-21.jpg" alt="تنت" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">MAKEUP</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Makeup</div>
+              <div class="product-name">تنت</div>
+              <div class="product-arabic">لون طبيعي للشفاه والخدود</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#880e4f"></div><div class="dot" style="background:#e91e8c"></div><div class="dot" style="background:#5d2010"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_9_2026-05-13_12-03-21.jpg" alt="مزيل المكياج" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Makeup</div>
+              <div class="product-name">مزيل المكياج</div>
+              <div class="product-arabic">يزيل المكياج بلطف دون جفاف</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fce4ec"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_13_2026-05-13_12-03-21.jpg" alt="جل الحواجب" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Makeup</div>
+              <div class="product-name">جل الحواجب</div>
+              <div class="product-arabic">يثبت الحواجب ويمنحها شكلاً طبيعياً</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#3d1f2e"></div><div class="dot" style="background:#5d4037"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_8_2026-05-13_12-03-21.jpg" alt="سكراب" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Care</div>
+              <div class="product-name">سكراب</div>
+              <div class="product-arabic">تقشير طبيعي — ناعم وفعّال</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#87ceeb"></div><div class="dot" style="background:#fff"></div><div class="dot" style="background:#f4a200"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_11_2026-05-13_12-03-21.jpg" alt="أملاح للجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">BESTSELLER</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Care</div>
+              <div class="product-name">أملاح للجسم</div>
+              <div class="product-arabic">أملاح بحرية طبيعية — 3 ألوان</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#7ecfcf"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_9_2026-05-13_12-03-21.jpg" alt="ميست الجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Care</div>
+              <div class="product-name">ميست الجسم</div>
+              <div class="product-arabic">عطر خفيف ومنعش — Fine Fragrance</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9f9f9"></div><div class="dot" style="background:#c0392b"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_6_2026-05-13_12-03-21.jpg" alt="زيت الجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Care</div>
+              <div class="product-name">زيت الجسم</div>
+              <div class="product-arabic">زيت طبيعي مغذٍّ للبشرة — 100ml</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#9c27b0"></div><div class="dot" style="background:#daa520"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_7_2026-05-13_12-03-21.jpg" alt="سيروم هيالورونيك" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">BEST SKIN</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Serum</div>
+              <div class="product-name">سيروم هيالورونيك</div>
+              <div class="product-arabic">ترطيب عميق — 50ml</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#c0392b"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_7_2026-05-13_12-03-21.jpg" alt="سيروم حول العين" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Serum</div>
+              <div class="product-name">سيروم حول العين</div>
+              <div class="product-arabic">يقلل الهالات والانتفاخ</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#c0392b"></div><div class="dot" style="background:#fce4ec"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_7_2026-05-13_12-03-21.jpg" alt="سيروم العرق سوس" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Serum</div>
+              <div class="product-name">سيروم العرق سوس</div>
+              <div class="product-arabic">تبييض طبيعي وتوحيد اللون</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#5d4037"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_15_2026-05-13_12-03-21.jpg" alt="كريم أربوتين (مبيض)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Skin Care</div>
+              <div class="product-name">كريم أربوتين (مبيض)</div>
+              <div class="product-arabic">يوحد لون البشرة ويشرّقها</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fff"></div><div class="dot" style="background:#e8668a"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_12_2026-05-13_12-03-21.jpg" alt="مخمرية" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">NEW</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Skin Care</div>
+              <div class="product-name">مخمرية</div>
+              <div class="product-arabic">عناية مكثفة بالمكونات المخمرة</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fce4ec"></div><div class="dot" style="background:#f9b8cc"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_15_2026-05-13_12-03-21.jpg" alt="ماسك لبان الذكر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Skin Care</div>
+              <div class="product-name">ماسك لبان الذكر</div>
+              <div class="product-arabic">شد وتجديد البشرة بشكل طبيعي</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#d4a060"></div><div class="dot" style="background:#8b6914"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_13_2026-05-13_12-03-21.jpg" alt="ميست الشعر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Hair Care</div>
+              <div class="product-name">ميست الشعر</div>
+              <div class="product-arabic">رطوبة وتعطير خفيف للشعر</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9aab8"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_4_2026-05-13_12-03-21.jpg" alt="سيروم لأطراف الشعر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Hair Care</div>
+              <div class="product-name">سيروم لأطراف الشعر</div>
+              <div class="product-arabic">يغذي ويصلح أطراف الشعر — 150ml</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#e8668a"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_10_2026-05-13_12-03-21.jpg" alt="زيت بيبي هير (للشعر الفاتح)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">NEW</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Hair Care</div>
+              <div class="product-name">زيت بيبي هير (للشعر الفاتح)</div>
+              <div class="product-arabic">زيت مغذٍّ خاص للشعر الفاتح</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#ffe082"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_10_2026-05-13_12-03-21.jpg" alt="زيت بيبي هير (للشعر الغامق)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Hair Care</div>
+              <div class="product-name">زيت بيبي هير (للشعر الغامق)</div>
+              <div class="product-arabic">زيت مغذٍّ خاص للشعر الغامق</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#5d4037"></div><div class="dot" style="background:#3d1f2e"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_14_2026-05-13_12-03-21.jpg" alt="زيت التان الغامق (البرونز)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Tanning</div>
+              <div class="product-name">زيت التان الغامق (البرونز)</div>
+              <div class="product-arabic">تبرنزي بلون غامق ذهبي</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#8b4513"></div><div class="dot" style="background:#c06020"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_14_2026-05-13_12-03-21.jpg" alt="زيت التان الفاتح (الأحمر)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Tanning</div>
+              <div class="product-name">زيت التان الفاتح (الأحمر)</div>
+              <div class="product-arabic">تبرنزي بلون فاتح محمر</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#e53935"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
       </div></div>
-      <div class="carousel-nav"><button class="carousel-btn" id="prev-all">❯</button><div class="carousel-dots" id="dots-all"></div><button class="carousel-btn" id="next-all">❮</button></div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prev-all">❯</button>
+        <div class="carousel-dots" id="dots-all"></div>
+        <button class="carousel-btn" id="next-all">❮</button>
+      </div>
     </div>
-
+    <!-- BUTTER -->
+    <div class="carousel-panel" id="panel-butter">
+      <div class="carousel-viewport"><div class="carousel-track" id="track-butter">
+        
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_1_2026-05-13_12-03-21.jpg" alt="زبدة الشيا الخام" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">BESTSELLER</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Butter</div>
+              <div class="product-name">زبدة الشيا الخام</div>
+              <div class="product-arabic">مرطب عميق — زبدة شيا 100% طبيعية</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fff3e0"></div><div class="dot" style="background:#f4d89a"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_2_2026-05-13_12-03-21.jpg" alt="زبدة البرونز" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Butter</div>
+              <div class="product-name">زبدة البرونز</div>
+              <div class="product-arabic">ترطيب + توهج ذهبي للبشرة</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#c47a2a"></div><div class="dot" style="background:#8b4513"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_3_2026-05-13_12-03-21.jpg" alt="زبدة الليمون" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Butter</div>
+              <div class="product-name">زبدة الليمون</div>
+              <div class="product-arabic">ترطيب منعش مع رائحة الحمضيات</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fff176"></div><div class="dot" style="background:#f9a825"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+      </div></div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prev-butter">❯</button>
+        <div class="carousel-dots" id="dots-butter"></div>
+        <button class="carousel-btn" id="next-butter">❮</button>
+      </div>
+    </div>
     <!-- BODY -->
     <div class="carousel-panel" id="panel-body">
       <div class="carousel-viewport"><div class="carousel-track" id="track-body">
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-11-15.jpg" alt="Body Salts" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">BESTSELLER</div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Body Salts</div><div class="product-arabic">أملاح الجسم — 3 ألوان</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#7ecfcf"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-22.jpg" alt="Tanning Oil" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffe0b2,#f4a200)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Tanning Oil</div><div class="product-arabic">زيت التانينج — تبرنزي بيوم</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#c06020"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-23.jpg" alt="Body Butter" onerror="this.parentElement.style.background='linear-gradient(135deg,#fff3e0,#fce4ec)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">ORGANIC</div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Body Butter</div><div class="product-arabic">زبدة الجسم — ترطيب 24 ساعة</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#fff3e0;border:1.5px solid #ddd"></div><div class="dot" style="background:#8b4513"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-38.jpg" alt="Scrub" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#e8668a)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Body Scrub</div><div class="product-arabic">سكراب الجسم — 100g</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#87ceeb"></div><div class="dot" style="background:#f4a200"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-24.jpg" alt="Body Oil" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Body Care</div><div class="product-name">Body Oil</div><div class="product-arabic">زيت الجسم — لافندر وفانيلا</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#9c27b0"></div><div class="dot" style="background:#daa520"></div></div><div class="product-arrow">→</div></div></div></div>
+        
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_8_2026-05-13_12-03-21.jpg" alt="سكراب" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Care</div>
+              <div class="product-name">سكراب</div>
+              <div class="product-arabic">تقشير طبيعي — ناعم وفعّال</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#87ceeb"></div><div class="dot" style="background:#fff"></div><div class="dot" style="background:#f4a200"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_11_2026-05-13_12-03-21.jpg" alt="أملاح للجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">BESTSELLER</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Care</div>
+              <div class="product-name">أملاح للجسم</div>
+              <div class="product-arabic">أملاح بحرية طبيعية — 3 ألوان</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#7ecfcf"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_9_2026-05-13_12-03-21.jpg" alt="ميست الجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Care</div>
+              <div class="product-name">ميست الجسم</div>
+              <div class="product-arabic">عطر خفيف ومنعش — Fine Fragrance</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9f9f9"></div><div class="dot" style="background:#c0392b"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_6_2026-05-13_12-03-21.jpg" alt="زيت الجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Body Care</div>
+              <div class="product-name">زيت الجسم</div>
+              <div class="product-arabic">زيت طبيعي مغذٍّ للبشرة — 100ml</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#9c27b0"></div><div class="dot" style="background:#daa520"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
       </div></div>
-      <div class="carousel-nav"><button class="carousel-btn" id="prev-body">❯</button><div class="carousel-dots" id="dots-body"></div><button class="carousel-btn" id="next-body">❮</button></div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prev-body">❯</button>
+        <div class="carousel-dots" id="dots-body"></div>
+        <button class="carousel-btn" id="next-body">❮</button>
+      </div>
     </div>
-
+    <!-- SKIN -->
+    <div class="carousel-panel" id="panel-skin">
+      <div class="carousel-viewport"><div class="carousel-track" id="track-skin">
+        
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_7_2026-05-13_12-03-21.jpg" alt="سيروم هيالورونيك" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">BEST SKIN</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Serum</div>
+              <div class="product-name">سيروم هيالورونيك</div>
+              <div class="product-arabic">ترطيب عميق — 50ml</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#c0392b"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_7_2026-05-13_12-03-21.jpg" alt="سيروم حول العين" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Serum</div>
+              <div class="product-name">سيروم حول العين</div>
+              <div class="product-arabic">يقلل الهالات والانتفاخ</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#c0392b"></div><div class="dot" style="background:#fce4ec"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_7_2026-05-13_12-03-21.jpg" alt="سيروم العرق سوس" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Serum</div>
+              <div class="product-name">سيروم العرق سوس</div>
+              <div class="product-arabic">تبييض طبيعي وتوحيد اللون</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#5d4037"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_15_2026-05-13_12-03-21.jpg" alt="كريم أربوتين (مبيض)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Skin Care</div>
+              <div class="product-name">كريم أربوتين (مبيض)</div>
+              <div class="product-arabic">يوحد لون البشرة ويشرّقها</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fff"></div><div class="dot" style="background:#e8668a"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_12_2026-05-13_12-03-21.jpg" alt="مخمرية" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">NEW</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Skin Care</div>
+              <div class="product-name">مخمرية</div>
+              <div class="product-arabic">عناية مكثفة بالمكونات المخمرة</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fce4ec"></div><div class="dot" style="background:#f9b8cc"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_15_2026-05-13_12-03-21.jpg" alt="ماسك لبان الذكر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Skin Care</div>
+              <div class="product-name">ماسك لبان الذكر</div>
+              <div class="product-arabic">شد وتجديد البشرة بشكل طبيعي</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#d4a060"></div><div class="dot" style="background:#8b6914"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+      </div></div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prev-skin">❯</button>
+        <div class="carousel-dots" id="dots-skin"></div>
+        <button class="carousel-btn" id="next-skin">❮</button>
+      </div>
+    </div>
     <!-- HAIR -->
     <div class="carousel-panel" id="panel-hair">
       <div class="carousel-viewport"><div class="carousel-track" id="track-hair">
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-20.jpg" alt="Baby Hair Oil" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#e8668a)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">NEW</div></div><div class="product-info"><div class="product-cat">Hair Care</div><div class="product-name">Baby Hair Oil</div><div class="product-arabic">زيوت مغذية — All & Dyed Hair</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9aab8"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-35.jpg" alt="Serum Hair Ends" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Hair Care</div><div class="product-name">Serum for Hair Ends</div><div class="product-arabic">سيروم لأطراف الشعر — 150ml</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#e8668a"></div></div><div class="product-arrow">→</div></div></div></div>
+        
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_13_2026-05-13_12-03-21.jpg" alt="ميست الشعر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Hair Care</div>
+              <div class="product-name">ميست الشعر</div>
+              <div class="product-arabic">رطوبة وتعطير خفيف للشعر</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9aab8"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_4_2026-05-13_12-03-21.jpg" alt="سيروم لأطراف الشعر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Hair Care</div>
+              <div class="product-name">سيروم لأطراف الشعر</div>
+              <div class="product-arabic">يغذي ويصلح أطراف الشعر — 150ml</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#e8668a"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_10_2026-05-13_12-03-21.jpg" alt="زيت بيبي هير (للشعر الفاتح)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">NEW</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Hair Care</div>
+              <div class="product-name">زيت بيبي هير (للشعر الفاتح)</div>
+              <div class="product-arabic">زيت مغذٍّ خاص للشعر الفاتح</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#f9aab8"></div><div class="dot" style="background:#ffe082"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_10_2026-05-13_12-03-21.jpg" alt="زيت بيبي هير (للشعر الغامق)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Hair Care</div>
+              <div class="product-name">زيت بيبي هير (للشعر الغامق)</div>
+              <div class="product-arabic">زيت مغذٍّ خاص للشعر الغامق</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#5d4037"></div><div class="dot" style="background:#3d1f2e"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
       </div></div>
-      <div class="carousel-nav"><button class="carousel-btn" id="prev-hair">❯</button><div class="carousel-dots" id="dots-hair"></div><button class="carousel-btn" id="next-hair">❮</button></div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prev-hair">❯</button>
+        <div class="carousel-dots" id="dots-hair"></div>
+        <button class="carousel-btn" id="next-hair">❮</button>
+      </div>
     </div>
-
-    <!-- SERUM -->
-    <div class="carousel-panel" id="panel-serum">
-      <div class="carousel-viewport"><div class="carousel-track" id="track-serum">
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-30.jpg" alt="Hyaluronic" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8668a,#c0392b)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">BEST SKIN</div></div><div class="product-info"><div class="product-cat">Serum</div><div class="product-name">Hyaluronic Acid Serum</div><div class="product-arabic">سيروم هيالورونيك — 50ml</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#c0392b"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-33.jpg" alt="Whitening" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#c0392b)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Serum</div><div class="product-name">Whitening Serum</div><div class="product-arabic">سيروم التبييض — عرق السوس</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#5d4037"></div></div><div class="product-arrow">→</div></div></div></div>
-      </div></div>
-      <div class="carousel-nav"><button class="carousel-btn" id="prev-serum">❯</button><div class="carousel-dots" id="dots-serum"></div><button class="carousel-btn" id="next-serum">❮</button></div>
-    </div>
-
-    <!-- FRAGRANCE -->
-    <div class="carousel-panel" id="panel-fragrance">
-      <div class="carousel-viewport"><div class="carousel-track" id="track-fragrance">
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-29.jpg" alt="Body Mist" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f48fb1)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div></div><div class="product-info"><div class="product-cat">Fragrance</div><div class="product-name">Body Mist</div><div class="product-arabic">عطر للجسم — Fine Fragrance</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#e8668a"></div><div class="dot" style="background:#f9f9f9;border:1.5px solid #ddd"></div><div class="dot" style="background:#c0392b"></div></div><div class="product-arrow">→</div></div></div></div>
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-18-13.jpg" alt="Solid Perfume" onerror="this.parentElement.style.background='linear-gradient(135deg,#f5f5f5,#eee)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">10 SCENTS</div></div><div class="product-info"><div class="product-cat">Fragrance</div><div class="product-name">Solid Perfume</div><div class="product-arabic">عطر صلب — 10 روائح</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#2196f3"></div><div class="dot" style="background:#9c27b0"></div><div class="dot" style="background:#4caf50"></div><div class="dot" style="background:#ff9800"></div></div><div class="product-arrow">→</div></div></div></div>
-      </div></div>
-      <div class="carousel-nav"><button class="carousel-btn" id="prev-fragrance">❯</button><div class="carousel-dots" id="dots-fragrance"></div><button class="carousel-btn" id="next-fragrance">❮</button></div>
-    </div>
-
     <!-- MAKEUP -->
     <div class="carousel-panel" id="panel-makeup">
       <div class="carousel-viewport"><div class="carousel-track" id="track-makeup">
-        <div class="product-card"><div class="product-img-wrap"><img src="PHOTO-2026-04-21-23-12-35.jpg" alt="Tint Balm" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#880e4f)'"><div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div><div class="product-badge">MAKEUP</div></div><div class="product-info"><div class="product-cat">Makeup</div><div class="product-name">Tint Balm</div><div class="product-arabic">تينت بالم — 3 ألوان 15g</div><div class="product-footer"><div class="product-dots"><div class="dot" style="background:#880e4f"></div><div class="dot" style="background:#e91e8c"></div><div class="dot" style="background:#5d2010"></div></div><div class="product-arrow">→</div></div></div></div>
+        
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_5_2026-05-13_12-03-21.jpg" alt="تنت" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              <div class="product-badge">MAKEUP</div>
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Makeup</div>
+              <div class="product-name">تنت</div>
+              <div class="product-arabic">لون طبيعي للشفاه والخدود</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#880e4f"></div><div class="dot" style="background:#e91e8c"></div><div class="dot" style="background:#5d2010"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_9_2026-05-13_12-03-21.jpg" alt="مزيل المكياج" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Makeup</div>
+              <div class="product-name">مزيل المكياج</div>
+              <div class="product-arabic">يزيل المكياج بلطف دون جفاف</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#fce4ec"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_13_2026-05-13_12-03-21.jpg" alt="جل الحواجب" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Makeup</div>
+              <div class="product-name">جل الحواجب</div>
+              <div class="product-arabic">يثبت الحواجب ويمنحها شكلاً طبيعياً</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#3d1f2e"></div><div class="dot" style="background:#5d4037"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
       </div></div>
-      <div class="carousel-nav"><button class="carousel-btn" id="prev-makeup">❯</button><div class="carousel-dots" id="dots-makeup"></div><button class="carousel-btn" id="next-makeup">❮</button></div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prev-makeup">❯</button>
+        <div class="carousel-dots" id="dots-makeup"></div>
+        <button class="carousel-btn" id="next-makeup">❮</button>
+      </div>
     </div>
-
+    <!-- TANNING -->
+    <div class="carousel-panel" id="panel-tanning">
+      <div class="carousel-viewport"><div class="carousel-track" id="track-tanning">
+        
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_14_2026-05-13_12-03-21.jpg" alt="زيت التان الغامق (البرونز)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Tanning</div>
+              <div class="product-name">زيت التان الغامق (البرونز)</div>
+              <div class="product-arabic">تبرنزي بلون غامق ذهبي</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#8b4513"></div><div class="dot" style="background:#c06020"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="photo_14_2026-05-13_12-03-21.jpg" alt="زيت التان الفاتح (الأحمر)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
+              
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Tanning</div>
+              <div class="product-name">زيت التان الفاتح (الأحمر)</div>
+              <div class="product-arabic">تبرنزي بلون فاتح محمر</div>
+              <div class="product-footer">
+                <div class="product-dots"><div class="dot" style="background:#f4a200"></div><div class="dot" style="background:#e53935"></div></div>
+                <div class="product-arrow">→</div>
+              </div>
+            </div>
+          </div>
+      </div></div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prev-tanning">❯</button>
+        <div class="carousel-dots" id="dots-tanning"></div>
+        <button class="carousel-btn" id="next-tanning">❮</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -493,7 +1209,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
       <div class="rst-arrow">←</div>
       <div class="routine-step"><div class="rst-num">3</div><p>تصلكِ الطلبية مع شرح الاستخدام</p></div>
     </div>
-    <a href="https://wa.me/963000000000" target="_blank" class="routine-wa-btn">
+    <a href="https://wa.me/message/NECEQUQ3ECCDO1" target="_blank" class="routine-wa-btn">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       اطلبي روتينك على واتساب
     </a>
@@ -521,7 +1237,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
   <p class="cta-sub">اكتشفي عالم ANTE من الجمال الطبيعي — لأن كل امرأة تستحق الاعتناء بنفسها</p>
   <div class="cta-btns">
     <a href="#products" class="btn-white">🛍 تسوقي الآن</a>
-    <a href="https://wa.me/963000000000" target="_blank" class="btn-outline" style="color:rgba(255,255,255,0.85);border-color:rgba(255,255,255,0.4);">تواصلي معنا</a>
+    <a href="https://wa.me/message/NECEQUQ3ECCDO1" target="_blank" class="btn-outline" style="color:rgba(255,255,255,0.85);border-color:rgba(255,255,255,0.4);">تواصلي معنا</a>
   </div>
 </section>
 
@@ -530,11 +1246,10 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
   <div class="footer-brand">
     <a href="index.html" class="logo">ANTE | أنتي</a>
     <p>منتجات تجميل طبيعية سورية يدوية الصنع.<br>U Must Be... ANTE.</p>
-    <div class="social-links">
-      <a href="#" class="social-link" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-      <a href="#" class="social-link" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-      <a href="#" class="social-link" title="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg></a>
-      <a href="https://wa.me/963000000000" class="social-link" title="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <div class="social-links">
+      <a href="https://www.instagram.com/ante_00_?igsh=MTJiYWMzc3J5Njg3OQ%3D%3D&utm_source=qr" target="_blank" class="social-link" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.facebook.com/share/1ApefzcfzU/?mibextid=wwXIfr" target="_blank" class="social-link" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://wa.me/message/NECEQUQ3ECCDO1" target="_blank" class="social-link" title="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
   </div>
   <div class="footer-col"><h5>المنتجات</h5><ul><li><a href="#products">أملاح الجسم</a></li><li><a href="#products">زيت الشعر</a></li><li><a href="#products">سيروم</a></li><li><a href="#products">زبدة الجسم</a></li><li><a href="#products">عطور</a></li></ul></div>
@@ -580,7 +1295,7 @@ function initCarousel(id){
   track.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)go(d<0?cur+1:cur-1);});
   go(0);
 }
-['all','body','hair','serum','fragrance','makeup'].forEach(initCarousel);
+['all','butter','body','skin','hair','makeup','tanning'].forEach(initCarousel);
 document.querySelectorAll('.cat-tab').forEach(tab=>{tab.onclick=()=>{document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.carousel-panel').forEach(p=>p.classList.remove('active'));tab.classList.add('active');document.getElementById('panel-'+tab.dataset.panel)?.classList.add('active');initCarousel(tab.dataset.panel);};});
 // Parallax
 document.querySelector('.hero').addEventListener('mousemove',e=>{const r=e.currentTarget.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/r.width,y=(e.clientY-r.top-r.height/2)/r.height;document.querySelectorAll('.blob').forEach((b,i)=>b.style.transform=`translate(${x*(i+1)*12}px,${y*(i+1)*12}px)`);});
