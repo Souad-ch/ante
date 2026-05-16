@@ -209,10 +209,10 @@ section{padding:100px 60px;}
 .testimonials-section{background:linear-gradient(160deg,#fce4ec 0%,#fff8f5 50%,#fce4ec 100%);}
 .testimonials-header{text-align:center;margin-bottom:60px;}
 .testimonials-header .section-sub{margin:0 auto;}
-.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.testimonial-card{background:white;padding:32px;border-radius:24px;box-shadow:0 8px 40px rgba(232,102,138,0.06);opacity:0;transform:translateY(30px);transition:all 0.5s ease;position:relative;overflow:hidden;}
+.testimonials-track{display:flex;gap:24px;transition:transform 0.5s cubic-bezier(0.23,1,0.32,1);will-change:transform;}
+.testimonials-track .testimonial-card{flex:0 0 calc(33.333% - 16px);min-width:0;}
+.testimonial-card{background:white;padding:32px;border-radius:24px;box-shadow:0 8px 40px rgba(232,102,138,0.06);transition:all 0.5s ease;position:relative;overflow:hidden;}
 .testimonial-card::before{content:'"';font-family:'Playfair Display',serif;font-size:120px;color:rgba(232,102,138,0.08);position:absolute;top:-20px;right:20px;line-height:1;}
-.testimonial-card.visible{opacity:1;transform:translateY(0);}
 .testimonial-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(232,102,138,0.12);}
 .stars{color:#f4a200;font-size:14px;margin-bottom:16px;}
 .testimonial-text{font-size:15px;line-height:1.8;color:var(--text);margin-bottom:24px;}
@@ -255,7 +255,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
   .hero{grid-template-columns:1fr;padding:100px 24px 60px;gap:32px;}
   .hero-visual{order:1;height:320px;width:100%;}
   .hero-content{order:2;}
-  .stats-bar{padding:24px;flex-wrap:wrap;gap:20px;}.features-grid{grid-template-columns:1fr;}.testimonials-grid{grid-template-columns:1fr;}
+  .stats-bar{padding:24px;flex-wrap:wrap;gap:20px;}.features-grid{grid-template-columns:1fr;}.testimonials-track .testimonial-card{flex:0 0 calc(100% - 0px);}
   .payment-layout{grid-template-columns:1fr;gap:40px;}.routine-steps{flex-direction:column;}.rst-arrow{transform:rotate(90deg);}
   .carousel-track .product-card{flex:0 0 calc(100% - 0px);}
   .offers-carousel-track .offer-card{flex:0 0 calc(100% - 0px);}
@@ -307,7 +307,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
   </div>
   <!-- Visual: LEFT side in RTL (order:2) -->
   <div class="hero-visual">
-    <div class="hero-img-card" style="height:100%;"><img src="photo_4_2026-05-13_12-18-40.jpg.png" alt="ANTE Logo" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"></div>
+    <div class="hero-img-card" style="height:100%;"><img src="photo_4_2026-05-13_12-18-40.jpg" alt="ANTE Logo" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"></div>
     <div class="hero-img-card" style="height:160px;"><img src="photo_1_2026-05-13_12-18-40.jpg" alt="Tint Balm" onerror="this.parentElement.style.background='linear-gradient(135deg,#f9b8cc,#e8668a)'"></div>
     <div class="hero-img-card" style="height:160px;"><img src="photo_2_2026-05-13_12-18-40.jpg" alt="Makeup Remover" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffe4cc,#f4a200)'"></div>
   </div>
@@ -378,9 +378,9 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
     </div>
   </div>
   <div class="carousel-nav">
-    <button class="carousel-btn" id="prev-offers">❯</button>
+    <button class="carousel-btn" id="prev-offers">❮</button>
     <div class="carousel-dots" id="dots-offers"></div>
-    <button class="carousel-btn" id="next-offers">❮</button>
+    <button class="carousel-btn" id="next-offers">❯</button>
   </div>
 </section>
 
@@ -408,7 +408,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
         
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_9_2026-05-13_12-03-21.jpg" alt="زبدة الشيا الخام" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_1_2026-05-13_12-03-21.jpg" alt="زبدة الشيا الخام" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               <div class="product-badge">BESTSELLER</div>
             </div>
@@ -424,7 +424,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_8_2026-05-13_12-03-21.jpg" alt="زبدة البرونز" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_2_2026-05-13_12-03-21.jpg" alt="زبدة البرونز" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -440,7 +440,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_10_2026-05-13_12-03-21.jpg" alt="زبدة الليمون" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_3_2026-05-13_12-03-21.jpg" alt="زبدة الليمون" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -456,7 +456,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_12_2026-05-13_12-03-21.jpg" alt="تنت" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_1_2026-05-13_12-18-40.jpg" alt="تنت" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               <div class="product-badge">MAKEUP</div>
             </div>
@@ -504,7 +504,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_15_2026-05-13_12-03-21.jpg" alt="سكراب" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_8_2026-05-13_12-03-21.jpg" alt="سكراب" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -520,7 +520,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_3_2026-05-13_12-03-21.jpg" alt="أملاح للجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_11_2026-05-13_12-03-21.jpg" alt="أملاح للجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               <div class="product-badge">BESTSELLER</div>
             </div>
@@ -536,7 +536,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_1_2026-05-13_12-03-21.jpg" alt="ميست الجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_9_2026-05-13_12-03-21.jpg" alt="ميست الجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -552,7 +552,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_13_2026-05-13_12-03-21.jpg" alt="زيت الجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_6_2026-05-13_12-03-21.jpg" alt="زيت الجسم" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -568,7 +568,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_2026-05-13_12-58-10.jpg" alt="سيروم هيالورونيك" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_7_2026-05-13_12-03-21.jpg" alt="سيروم هيالورونيك" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               <div class="product-badge">BEST SKIN</div>
             </div>
@@ -600,7 +600,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_14_2026-05-13_12-03-21.jpg" alt="سيروم العرق سوس" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_7_2026-05-13_12-03-21.jpg" alt="سيروم العرق سوس" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -616,7 +616,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_7_2026-05-13_12-03-21.jpg" alt="كريم أربوتين (مبيض)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_15_2026-05-13_12-03-21.jpg" alt="كريم أربوتين (مبيض)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -632,7 +632,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_4_2026-05-13_12-03-21.jpg" alt="مخمرية" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_12_2026-05-13_12-03-21.jpg" alt="مخمرية" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               <div class="product-badge">NEW</div>
             </div>
@@ -664,7 +664,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_5_2026-05-13_12-03-21.jpg" alt="ميست الشعر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_13_2026-05-13_12-03-21.jpg" alt="ميست الشعر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -680,7 +680,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_11_2026-05-13_12-03-21.jpg" alt="سيروم لأطراف الشعر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_4_2026-05-13_12-03-21.jpg" alt="سيروم لأطراف الشعر" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -696,7 +696,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_2_2026-05-13_12-03-21.jpg" alt="زيت بيبي هير (للشعر الفاتح)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_10_2026-05-13_12-03-21.jpg" alt="زيت بيبي هير (للشعر الفاتح)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               <div class="product-badge">NEW</div>
             </div>
@@ -712,7 +712,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_2_2026-05-13_12-03-21.jpg" alt="زيت بيبي هير (للشعر الغامق)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_10_2026-05-13_12-03-21.jpg" alt="زيت بيبي هير (للشعر الغامق)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -728,7 +728,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_6_2026-05-13_12-03-21.jpg" alt="زيت التان الغامق (البرونز)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_14_2026-05-13_12-03-21.jpg" alt="زيت التان الغامق (البرونز)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -744,7 +744,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_6_2026-05-13_12-03-21.jpg" alt="زيت التان الفاتح (الأحمر)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_14_2026-05-13_12-03-21.jpg" alt="زيت التان الفاتح (الأحمر)" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               
             </div>
@@ -760,9 +760,9 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
       </div></div>
       <div class="carousel-nav">
-        <button class="carousel-btn" id="prev-all">❯</button>
+        <button class="carousel-btn" id="prev-all">❮</button>
         <div class="carousel-dots" id="dots-all"></div>
-        <button class="carousel-btn" id="next-all">❮</button>
+        <button class="carousel-btn" id="next-all">❯</button>
       </div>
     </div>
     <!-- BUTTER -->
@@ -771,7 +771,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
         
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="photo_9_2026-05-13_12-03-21.jpg" alt="زبدة الشيا الخام" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
+              <img src="photo_1_2026-05-13_12-03-21.jpg" alt="زبدة الشيا الخام" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'">
               <div class="product-overlay"><div class="overlay-btn">اكتشفي المنتج ✦</div></div>
               <div class="product-badge">BESTSELLER</div>
             </div>
@@ -819,9 +819,9 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
       </div></div>
       <div class="carousel-nav">
-        <button class="carousel-btn" id="prev-butter">❯</button>
+        <button class="carousel-btn" id="prev-butter">❮</button>
         <div class="carousel-dots" id="dots-butter"></div>
-        <button class="carousel-btn" id="next-butter">❮</button>
+        <button class="carousel-btn" id="next-butter">❯</button>
       </div>
     </div>
     <!-- BODY -->
@@ -894,9 +894,9 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
       </div></div>
       <div class="carousel-nav">
-        <button class="carousel-btn" id="prev-body">❯</button>
+        <button class="carousel-btn" id="prev-body">❮</button>
         <div class="carousel-dots" id="dots-body"></div>
-        <button class="carousel-btn" id="next-body">❮</button>
+        <button class="carousel-btn" id="next-body">❯</button>
       </div>
     </div>
     <!-- SKIN -->
@@ -1001,9 +1001,9 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
       </div></div>
       <div class="carousel-nav">
-        <button class="carousel-btn" id="prev-skin">❯</button>
+        <button class="carousel-btn" id="prev-skin">❮</button>
         <div class="carousel-dots" id="dots-skin"></div>
-        <button class="carousel-btn" id="next-skin">❮</button>
+        <button class="carousel-btn" id="next-skin">❯</button>
       </div>
     </div>
     <!-- HAIR -->
@@ -1076,9 +1076,9 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
       </div></div>
       <div class="carousel-nav">
-        <button class="carousel-btn" id="prev-hair">❯</button>
+        <button class="carousel-btn" id="prev-hair">❮</button>
         <div class="carousel-dots" id="dots-hair"></div>
-        <button class="carousel-btn" id="next-hair">❮</button>
+        <button class="carousel-btn" id="next-hair">❯</button>
       </div>
     </div>
     <!-- MAKEUP -->
@@ -1135,9 +1135,9 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
       </div></div>
       <div class="carousel-nav">
-        <button class="carousel-btn" id="prev-makeup">❯</button>
+        <button class="carousel-btn" id="prev-makeup">❮</button>
         <div class="carousel-dots" id="dots-makeup"></div>
-        <button class="carousel-btn" id="next-makeup">❮</button>
+        <button class="carousel-btn" id="next-makeup">❯</button>
       </div>
     </div>
     <!-- TANNING -->
@@ -1178,9 +1178,9 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
           </div>
       </div></div>
       <div class="carousel-nav">
-        <button class="carousel-btn" id="prev-tanning">❯</button>
+        <button class="carousel-btn" id="prev-tanning">❮</button>
         <div class="carousel-dots" id="dots-tanning"></div>
-        <button class="carousel-btn" id="next-tanning">❮</button>
+        <button class="carousel-btn" id="next-tanning">❯</button>
       </div>
     </div>
   </div>
@@ -1197,7 +1197,7 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
     <div class="features-visual">
       <div class="feat-img feat-img-1"><img src="photo_3_2026-05-13_12-18-40.jpg" alt="Serum Eye" onerror="this.parentElement.style.background='linear-gradient(135deg,#fce4ec,#f9b8cc)'"></div>
       <div class="feat-img feat-img-2"><img src="photo_2_2026-05-13_12-18-40.jpg" alt="Makeup Remover" onerror="this.parentElement.style.background='linear-gradient(135deg,#f9b8cc,#e8668a)'"></div>
-      <div class="feat-badge-float"><img src="" alt="100% Natural" style="width:90px;height:90px;object-fit:contain;"></div>
+      <div class="feat-badge-float"><img src="360_F_80182689_xGKs51GwrYPVm1JxK52ZgBEhXofcvp2i.jpg" alt="100% Natural" style="width:90px;height:90px;object-fit:contain;"></div>
     </div>
     <div class="features-list">
       <div class="feature-item"><div class="feature-icon">🌿</div><div class="feature-text"><h4>مكونات طبيعية 100%</h4><p>نستخدم فقط المكونات النقية من الطبيعة — زبدة الشيا، زيت جوز الهند، الهيالورونيك، وأكثر</p></div></div>
@@ -1262,10 +1262,20 @@ footer{background:var(--text);color:rgba(255,255,255,0.7);padding:60px;display:g
     <h2 class="section-title">آراء <em>زبوناتنا</em></h2>
     <p class="section-sub">أكثر من 5000 عميلة سعيدة يثقن بـ ANTE</p>
   </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">وصلني الطلب بأسرع وقت والتغليف كان روعة. أملاح الجسم ريحتها رهيبة وبشرتي صارت أنعم بشكل ملحوظ من أول استخدام!</p><div class="testimonial-author"><div class="author-avatar">🌸</div><div><div class="author-name">سارة المحمود</div><div class="author-loc">دمشق، سوريا</div></div></div></div>
-    <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">سيروم الهيالورونيك غير حياتي! بشرتي كانت جافة كتير وهلق صارت ترطيب مثالي. أنصح كل وحدة فيه.</p><div class="testimonial-author"><div class="author-avatar">💕</div><div><div class="author-name">نور الحسن</div><div class="author-loc">حلب، سوريا</div></div></div></div>
-    <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">زيت Baby Hair وقّف تساقط شعري بوقت قصير جداً. مجربة أكثر من علامة تجارية وANTE الأفضل بفرق كبير!</p><div class="testimonial-author"><div class="author-avatar">✨</div><div><div class="author-name">رنا سعيد</div><div class="author-loc">اللاذقية، سوريا</div></div></div></div>
+  <div class="carousel-viewport">
+    <div class="testimonials-track" id="testimonials-track">
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">وصلني الطلب بأسرع وقت والتغليف كان روعة. أملاح الجسم ريحتها رهيبة وبشرتي صارت أنعم بشكل ملحوظ من أول استخدام!</p><div class="testimonial-author"><div class="author-avatar">🌸</div><div><div class="author-name">سارة المحمود</div><div class="author-loc">دمشق، سوريا</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">سيروم الهيالورونيك غير حياتي! بشرتي كانت جافة كتير وهلق صارت ترطيب مثالي. أنصح كل وحدة فيه.</p><div class="testimonial-author"><div class="author-avatar">💕</div><div><div class="author-name">نور الحسن</div><div class="author-loc">حلب، سوريا</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">زيت Baby Hair وقّف تساقط شعري بوقت قصير جداً. مجربة أكثر من علامة تجارية وANTE الأفضل بفرق كبير!</p><div class="testimonial-author"><div class="author-avatar">✨</div><div><div class="author-name">رنا سعيد</div><div class="author-loc">اللاذقية، سوريا</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">زبدة الشيا الخام تجربة مختلفة كلياً! بشرتي صارت ناعمة جداً وما احتاجت لأي كريم ثاني. رح أطلب مرة تانية وتالتة!</p><div class="testimonial-author"><div class="author-avatar">🌹</div><div><div class="author-name">لينا الأحمد</div><div class="author-loc">دمشق، سوريا</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">الميست الجسم ريحته خيال! بيدوم كتير وما بيكون ثقيل. صار روتين يومي ما بقدر أستغني عنه.</p><div class="testimonial-author"><div class="author-avatar">💐</div><div><div class="author-name">هلا الزعبي</div><div class="author-loc">حمص، سوريا</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">سيروم حول العين خفف الهالات عندي بوقت قصير. ما توقعت النتيجة تكون هيك سريعة وواضحة. شكراً ريام!</p><div class="testimonial-author"><div class="author-avatar">⭐</div><div><div class="author-name">ميرا حداد</div><div class="author-loc">اللاذقية، سوريا</div></div></div></div>
+    </div>
+  </div>
+  <div class="carousel-nav">
+    <button class="carousel-btn" id="prev-testimonials">❮</button>
+    <div class="carousel-dots" id="dots-testimonials"></div>
+    <button class="carousel-btn" id="next-testimonials">❯</button>
   </div>
 </section>
 
@@ -1313,7 +1323,7 @@ window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),e.target.dataset.delay||0);io.unobserve(e.target);}});},{threshold:0.15});
 document.querySelectorAll('.stat-item').forEach((el,i)=>{el.dataset.delay=i*120;io.observe(el);});
 document.querySelectorAll('.feature-item').forEach((el,i)=>{el.dataset.delay=i*100;io.observe(el);});
-document.querySelectorAll('.testimonial-card').forEach((el,i)=>{el.dataset.delay=i*150;io.observe(el);});
+// testimonials now use carousel — no observer needed
 document.querySelectorAll('.offer-card').forEach((el,i)=>{el.dataset.delay=i*120;io.observe(el);});
 // Counter
 function animCount(el,t){let s=0,step=t/60,iv=setInterval(()=>{s+=step;if(s>=t){el.textContent=t.toLocaleString();clearInterval(iv);}else el.textContent=Math.floor(s).toLocaleString();},16);}
@@ -1357,6 +1367,32 @@ function initOffersCarousel(){
 }
 initOffersCarousel();
 window.addEventListener('resize',initOffersCarousel);
+
+// Testimonials carousel
+function initTestimonialsCarousel(){
+  const track=document.getElementById('testimonials-track');
+  const prev=document.getElementById('prev-testimonials');
+  const next=document.getElementById('next-testimonials');
+  const dots=document.getElementById('dots-testimonials');
+  if(!track||!prev||!next||!dots)return;
+  const cards=Array.from(track.children);
+  const VIS=window.innerWidth<700?1:window.innerWidth<1100?2:3;
+  const pages=Math.max(1,cards.length-VIS+1);
+  let cur=0;
+  dots.innerHTML='';
+  for(let i=0;i<pages;i++){const d=document.createElement('div');d.className='carousel-dot'+(i===0?' active':'');d.onclick=()=>go(i);dots.appendChild(d);}
+  function w(){if(!cards[0])return 0;return cards[0].offsetWidth+(parseFloat(getComputedStyle(track).gap)||24);}
+  function go(i){cur=Math.max(0,Math.min(i,pages-1));track.style.transform=`translateX(${cur*w()}px)`;dots.querySelectorAll('.carousel-dot').forEach((d,j)=>d.classList.toggle('active',j===cur));prev.disabled=cur===0;next.disabled=cur>=pages-1;}
+  prev.onclick=()=>go(cur+1);next.onclick=()=>go(cur-1);
+  let sx=0;track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)go(d<0?cur+1:cur-1);});
+  // Auto-advance every 4s
+  let autoPlay=setInterval(()=>go(cur+1<pages?cur+1:0),4000);
+  track.addEventListener('touchstart',()=>clearInterval(autoPlay),{passive:true});
+  go(0);
+}
+initTestimonialsCarousel();
+window.addEventListener('resize',initTestimonialsCarousel);
 document.querySelectorAll('.cat-tab').forEach(tab=>{tab.onclick=()=>{document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.carousel-panel').forEach(p=>p.classList.remove('active'));tab.classList.add('active');document.getElementById('panel-'+tab.dataset.panel)?.classList.add('active');initCarousel(tab.dataset.panel);};});
 // Parallax
 document.querySelector('.hero').addEventListener('mousemove',e=>{const r=e.currentTarget.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/r.width,y=(e.clientY-r.top-r.height/2)/r.height;document.querySelectorAll('.blob').forEach((b,i)=>b.style.transform=`translate(${x*(i+1)*12}px,${y*(i+1)*12}px)`);});
