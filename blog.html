@@ -309,6 +309,62 @@ document.querySelectorAll('.posts-grid .blog-card').forEach((el,i)=>{el.dataset.
 // Init observer for grid
 buildCarousel=null;
 window.addEventListener('resize',()=>{});
+
+// ════════════════════════════════════════════════════════
+// DYNAMIC BLOG LOADER from Admin Dashboard (localStorage)
+// ════════════════════════════════════════════════════════
+const ANTE_DB_BLOG = {
+  get: (key) => JSON.parse(localStorage.getItem('ante_' + key) || '[]'),
+};
+const CAT_BLOG_AR = {skin:'البشرة',hair:'الشعر',body:'الجسم',ingredients:'المكونات',routine:'الروتين'};
+
+function loadBlogPosts() {
+  const list = ANTE_DB_BLOG.get('blog');
+  if (list.length === 0) return; // keep static HTML
+
+  // Update featured post (first item)
+  const featured = list[0];
+  if (featured) {
+    const fi = document.querySelector('.featured-img-bg');
+    if (fi) { fi.textContent = featured.icon; fi.style.background = featured.bg; }
+    const ft = document.querySelector('.featured-title');
+    if (ft) ft.textContent = featured.title;
+    const fe = document.querySelector('.featured-excerpt');
+    if (fe) fe.textContent = featured.excerpt;
+    const badge = document.querySelector('.featured-badge');
+    if (badge) badge.textContent = `${featured.icon} مقال مميز — ${CAT_BLOG_AR[featured.cat]||featured.cat}`;
+  }
+
+  // Update posts grid
+  const grid = document.querySelector('.posts-grid');
+  if (grid) {
+    grid.innerHTML = list.map(b => `
+      <div class="blog-card">
+        <div class="blog-img" style="background:${b.bg}">${b.icon}</div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-cat">${CAT_BLOG_AR[b.cat]||b.cat}</span>
+            <span class="blog-date">${b.date}</span>
+          </div>
+          <h4 class="blog-title">${b.title}</h4>
+          <p class="blog-excerpt">${b.excerpt}</p>
+          <div class="blog-footer">
+            <a href="#" class="blog-read-more">اقرئي المقال ←</a>
+            <span class="blog-read-time">⏱ ${b.time||''}</span>
+          </div>
+        </div>
+      </div>`).join('');
+
+    // Re-observe new cards
+    document.querySelectorAll('.posts-grid .blog-card').forEach((el,i) => {
+      el.dataset.delay = i * 80;
+      io.observe(el);
+    });
+  }
+}
+
+loadBlogPosts();
+// ════════════════════════════════════════════════════════
 </script>
 </body>
 </html>
